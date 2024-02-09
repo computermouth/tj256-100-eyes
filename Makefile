@@ -9,7 +9,7 @@ RAYLIB_SRC ?= ext/raylib/src
 RAYLIB_LIB ?= libraylib.a
 RAYLIB_PLT ?= libraylib_$(PLATFORM).a
 
-IFLAGS += -I$(RAYLIB_SRC)
+IFLAGS += -I$(RAYLIB_SRC) -Os
 LFLAGS += -L$(RAYLIB_SRC) -lraylib_$(PLATFORM) -lm
 
 BIN ?= crayjam
