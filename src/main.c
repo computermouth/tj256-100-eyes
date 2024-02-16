@@ -115,6 +115,7 @@ int main(void)
 
     // Initialization
     //--------------------------------------------------------------------------------------
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(screen_w, screen_h, "crayjam");
     InitAudioDevice();
     SetMasterVolume(.7);
@@ -182,7 +183,7 @@ void update_menu(){
     // Render to screen (main framebuffer)
     BeginDrawing();
         ClearBackground(RAYWHITE);
-        DrawTexturePro(target.texture, (Rectangle){ 0, 0, (float)target.texture.width, -(float)target.texture.height }, (Rectangle){ 0, 0, screen_w, screen_h }, (Vector2){ 0, 0 }, 0.0f, blit_color);
+        DrawTexturePro(target.texture, (Rectangle){ 0, 0, (float)target.texture.width, -(float)target.texture.height }, (Rectangle){ 0, 0, GetScreenWidth(), GetScreenHeight() }, (Vector2){ 0, 0 }, 0.0f, blit_color);
         if(gs.state == GS_MENU_IDLE){
             DrawText("100 EYES", screen_w / 2 - MeasureText("100 EYES", 30) / 2, 100, 30, WHITE);
             if(GuiButton((Rectangle){.x = screen_w / 2. - 50, .y = screen_h * 3. / 4, .width = 100, .height = 30}, "PLAY")){
@@ -393,7 +394,7 @@ void game_play(){
     // Render to screen (main framebuffer)
     BeginDrawing();
         ClearBackground(RAYWHITE);
-        DrawTexturePro(target.texture, (Rectangle){ 0, 0, (float)target.texture.width, -(float)target.texture.height }, (Rectangle){ 0, 0, screen_w, screen_h }, (Vector2){ 0, 0 }, 0.0f, WHITE);
+        DrawTexturePro(target.texture, (Rectangle){ 0, 0, (float)target.texture.width, -(float)target.texture.height }, (Rectangle){ 0, 0, GetScreenWidth(), GetScreenHeight() }, (Vector2){ 0, 0 }, 0.0f, WHITE);
 
         if(gs.round != 33){
             char tmp[100] = { 0 };
