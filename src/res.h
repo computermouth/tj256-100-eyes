@@ -9,6 +9,7 @@ void res_init();
 extern Texture * player_tex[4];
 extern Texture hero_sp_tex;
 extern Texture * eye_tex[4];
+extern Texture * bg_tex[3];
 extern Texture * atk_tex[4];
 extern Texture * slash_tex[4][3];
 extern Texture god_tex;

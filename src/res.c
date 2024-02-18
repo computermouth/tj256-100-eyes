@@ -34,6 +34,12 @@ Texture hero_lt_tex    = { 0 };
 Texture hero_rt_tex    = { 0 };
 Texture hero_up_tex    = { 0 };
 
+Texture * bg_tex[3] = { 0 };
+
+Texture bg_tex0    = { 0 };
+Texture bg_tex1    = { 0 };
+Texture bg_tex2    = { 0 };
+
 Texture * eye_tex[4] = { 0 };
 
 Texture eye_dn_tex    = { 0 };
@@ -120,6 +126,14 @@ void res_init(){
     eye_tex[1] = &eye_rt_tex;
     eye_tex[2] = &eye_dn_tex;
     eye_tex[3] = &eye_lt_tex;
+
+	bg_tex0    = LoadTexture("res/bg0.png");
+	bg_tex1    = LoadTexture("res/bg1.png");
+	bg_tex2    = LoadTexture("res/bg2.png");
+    
+    bg_tex[0] = &bg_tex0;
+    bg_tex[1] = &bg_tex1;
+    bg_tex[2] = &bg_tex2;
 
 	atk_dn_tex    = LoadTexture("res/atk_dn.png");
 	atk_lt_tex    = LoadTexture("res/atk_lt.png");
